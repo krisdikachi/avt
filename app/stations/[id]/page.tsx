@@ -1,12 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
-import Navbar from "../../../components/navbar";
-// import Link from "next/link";
+'use client';
 
-export default function StationDetailPage() {
-  const params = useParams() as Record<string, string | undefined>;
-  const id = params?.id;
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Navbar from "../../../components/navbar";
+
+export default function StationDetailPage({ params }: { params: { id: string } }) {
+  const id = params.id;
   const router = useRouter();
   const [station, setStation] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -45,7 +44,7 @@ export default function StationDetailPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#000013] p-6  flex flex-col items-center">
+      <main className="min-h-screen bg-[#000013] p-6 flex flex-col items-center">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-xl w-full mt-16">
           <h1 className="text-3xl font-bold text-blue-800 mb-2">{station.name}</h1>
           <p className="text-gray-600 mb-2">{station.formatted_address || station.vicinity}</p>
