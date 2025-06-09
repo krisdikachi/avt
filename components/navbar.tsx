@@ -18,12 +18,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
+            <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
             <Image 
-            src="/avt logo.PNG" 
-            alt="Logo" 
-            className="h-6 w-6" />
-          </div>
+              src="/avt logo.PNG" 
+              alt="Logo" 
+              width={24}
+              height={24}
+              className="h-6 w-6"
+              style={{ objectFit: "contain" }}
+            />
+            </div>
           <span className="text-xl font-bold text-white">AndroVehicleTrack</span>
         </div>
 
