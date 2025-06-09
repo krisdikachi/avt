@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "../../../components/navbar";
 
-export default function StationDetailPage({ params }: { params: { id: string } }) {
-  const id = params.id;
+export default function StationDetailPage(props: any) {
+  const id = props.params.id;
   const router = useRouter();
   const [station, setStation] = useState<any>(null);
   const [loading, setLoading] = useState(true);
